@@ -1,13 +1,13 @@
 const app = document.getElementById('root')
-function U(dob){
-    for(var i=0;i<dob.length;i++){
-        fname=dob[i].name.first;
-        lname=dob[i].name.last;
-        img=dob[i].picture.large;
-        email=dob[i].email;
+function fetch(data){
+    for(var i=0;i<data.length;i++){
+        fname=data[i].name.first;
+        lname=data[i].name.last;
+        img=data[i].picture.large;
+        email=data[i].email;
         addperson(fname,lname,img,email);
     }
-    //console.log(dob.length)
+    //console.log(data.length)
 }
 function addperson(frst,lst,avatar,mail)
 {
@@ -24,10 +24,10 @@ function addperson(frst,lst,avatar,mail)
       }
       else{
           console.log("no image found")
-          const na=document.createElement('div')
-          na.textContent=frst[0]+lst[0]
-          na.setAttribute('class','na')
-          card.appendChild(na)
+          const notavailable=document.createElement('div')
+          notavailable.textContent=frst[0]+lst[0]
+          notavailable.setAttribute('class','notavailable')
+          card.appendChild(notavailable)
       }
       //creating another div called details for info
       const details=document.createElement('div')
